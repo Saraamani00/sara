@@ -1,0 +1,192 @@
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        header .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #313E2B;
+            font-weight: bold;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        header nav a:hover {
+            color: #BDDFB6;
+        }
+
+        header nav a.active {
+            color: #006400;
+            border-bottom: 2px solid #006400;
+        }
+
+        #gallery {
+            background: linear-gradient(to bottom, #E3F2FD, #F1F8E9);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        #gallery h3 {
+            color: #006400;
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        footer {
+            background-color: #313E2B;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        footer .social-links a:hover {
+            color: #BDDFB6;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="video images/logo.jpg" alt="Logo Website">
+            <span>Sarah's Website</span>
+        </div>
+        <nav>
+            <a href="home.html" id="homeLink"><i class="fas fa-home"></i> HOME</a>
+            <a href="biodata.html" id="biodataLink"><i class="fas fa-user"></i> BIODATA</a>
+            <a href="education.html" id="educationLink"><i class="fas fa-graduation-cap"></i> EDUCATION</a>
+            <a href="family.html" id="familyLink"><i class="fas fa-users"></i> FAMILY</a>
+            <a href="experience.html" id="experienceLink"><i class="fas fa-briefcase"></i> EXPERIENCE</a>
+            <a href="gallery.html" id="galleryLink" class="active"><i class="fas fa-images"></i> GALLERY</a>
+            <a href="contact.html" id="contactLink"><i class="fas fa-phone"></i> CONTACT</a>
+        </nav>
+    </header>
+
+
+    <section id="gallery">
+        <h3>Gallery</h3>
+        <div class="gallery">
+            <a href="#img1"><img src="video images/images1.jpg" alt="Gallery Image 1"></a>
+            <a href="#img2"><img src="video images/images2.jpg" alt="Gallery Image 2"></a>
+            <a href="#img3"><img src="video images/images3.jpg" alt="Gallery Image 3"></a>
+            <a href="#img4"><img src="video images/images4.jpg" alt="Gallery Image 4"></a>
+        </div>
+
+        <div id="img2" class="lightbox">
+            <img src="video images/images1.jpg" alt="Gallery Image 1">
+        </div>
+        <div id="img5" class="lightbox">
+            <img src="video images/images2.jpg" alt="Gallery Image 2">
+        </div>
+        <div id="img9" class="lightbox">
+            <img src="video images/images3.jpg" alt="Gallery Image 3">
+        </div>
+        <div id="img10" class="lightbox">
+            <img src="video images/images4.jpg" alt="Gallery Image 4">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sarah Amani. All rights reserved.</p>
+    </footer>
+</body>
+</html>
